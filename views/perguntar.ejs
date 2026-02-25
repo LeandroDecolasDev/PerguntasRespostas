@@ -1,0 +1,30 @@
+<!--Adiciona partes de código ao html-->
+<%- include('partials/header')%>
+<body>
+
+    <%- include('partials/navbar') %>
+
+    <div class="container">
+        <div class="card" id="formulario-pergunta">
+            <div class="card-header">
+                <h3> Realizar Pergunta</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/salvarpergunta">
+                    <label>Titulo</label>
+                        <!--IMPORTANTE os campos que são enviados pelo 
+                        formulario devem conter "names" que seram usados para indentificar 
+                        os campos e pegar os respectivos dados-->
+                    <input type="text" name="titulo" placeholder="Titulo" class="form-control">
+                    <br>
+                    <label>Descrição</label>
+                    <textarea name="descricao" placeholder="Descricao da Pergunta" class="form-control"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<%- include('partials/footer') %>

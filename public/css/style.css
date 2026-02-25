@@ -1,0 +1,25 @@
+body{
+    background-color: #dadddf;
+}
+
+textarea{
+    resize: none;
+    height: 200px;
+}
+
+#icone-navbar{
+    width: 8vh;
+    margin-left: 10px;
+}
+
+#formulario-pergunta{
+    margin-top: 5vh;
+}
+
+.container{
+    width: 50%;
+    margin: 20px auto;
+    padding: 5%;
+    background-color: aliceblue;
+    border-radius: 20px;
+}

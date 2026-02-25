@@ -1,0 +1,39 @@
+<%- include('partials/header')%>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <hr>
+        <h2><%= pergunta.titulo%></h2>
+        <p> <%= pergunta.descricao %></p>
+        <hr>
+    </div>
+
+    <div class="container">
+        <h3>Responda:</h3>
+        <form method="post" action="/salvarresposta">
+            <textarea class="form-control" placeholder="Digite sua resposta" name="corpo"></textarea>
+            <br>
+            <input type="hidden" name="pergunta" value="<%= pergunta.id %>" >
+            <button type="submit"class="btn btn-dark">Enviar</button>
+        </form>
+    
+
+        <hr><h3>Respostas:</h3><hr>
+           <% resposta.forEach(resposta => { %>
+            <div class="card">
+                <div class="card-body">
+                    <hr>
+                        <p>anonymous:</p>
+                        <%= new Date(resposta.createdAt).toLocaleString('pt-BR') %>
+                        <p><%= resposta.corpo %></p>
+                    <hr>
+                </div>
+            </div>
+            <br>
+            <% });%>
+    </div>
+
+    
+</body>
+    <%- include('partials/footer') %>
+</html>
